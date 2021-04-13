@@ -1,0 +1,66 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
+	monitoring="autodetect" dynamicConfig="true" diskPersistent="false">
+
+	<cache name="messageCache" 
+		maxEntriesLocalHeap="2"
+		eternal="false" 
+		timeToLiveSeconds="60000"
+		memoryStoreEvictionPolicy="LFU" 
+		transactionalMode="off" >
+	</cache>
+
+</ehcache>
+<!-- <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
+	monitoring="autodetect" dynamicConfig="true" diskPersistent="true">
+
+	<diskStore path="user.dir" />
+
+	<cache name="messageCache" 
+		maxEntriesLocalHeap="5"
+		maxEntriesLocalDisk="10" 
+		eternal="false" 
+		diskSpoolBufferSizeMB="20"
+		timeToIdleSeconds="3000" 
+		timeToLiveSeconds="6000"
+		memoryStoreEvictionPolicy="LFU" 
+		transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+</ehcache> -->
+<!-- <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="ehcache.xsd"
+         updateCheck="false" monitoring="off" dynamicConfig="true">
+
+         
+         Sample Cache :: This cache has a maximum of 100 elements in memory.
+         There is no overflow to disk, so 100 is also the maximum cache size.
+        
+         <cache name="objectCache"
+           maxEntriesLocalHeap="100"
+           eternal="true"
+           memoryStoreEvictionPolicy="FIFO">
+            
+         </cache>  
+</ehcache> -->
+<!-- <config xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xmlns='http://www.ehcache.org/v3'
+	xmlns:jsr107='http://www.ehcache.org/v3/jsr107'>
+	<ehcache>
+		<diskStore path="java.io.tmpdir" />
+		
+		<defaultCache 
+			maxElementsInMemory="2000" 
+			eternal="true"
+			overflowToDisk="false" 
+			timeToLiveSeconds="1200" />
+			
+		<cache name="messageCache" 
+			maxElementsInMemory="2000"
+			eternal="false" 
+			overflowToDisk="false" 
+			timeToLiveSeconds="10000" />
+	</ehcache>
+</config>   -->
